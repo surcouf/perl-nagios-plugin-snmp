@@ -1291,9 +1291,8 @@ sub get_sys_info {
 
     my $result = $self->get(values %oids);
 
-    return ($OS_TYPES{$result->{$oids{'sysobjectid'}}},
-            $result->{$oids{'sysdescr'}});
-
+    return ($result->{$oids{'sysdescr'}},
+            $OS_TYPES{$result->{$oids{'sysobjectid'}}});
 }
 
 sub _ensure_defined_results {
